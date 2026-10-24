@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A personal library to organize and track your books.">
+    <title>My Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+```
+<header class="header">
+    <div class="header-content">
+        <a href="#" class="logo">Book<span>nest.</span></a>
+        <p class="header-subtitle">Your personal reading space</p>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="welcome-section">
+        <div>
+            <p class="eyebrow">YOUR COLLECTION</p>
+            <h1>My Library<span class="heading-dot">.</span></h1>
+            <p class="description">
+                Every book has a story. Keep track of yours.
+            </p>
+        </div>
+
+        <button type="button" id="new-book-btn" class="primary-btn">
+            <span class="plus-icon">+</span>
+            Add a book
+        </button>
+    </section>
+
+    <section class="stats">
+        <div class="stat-card">
+            <span class="stat-label">Total books</span>
+            <span class="stat-number" id="total-books">0</span>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-label">Books read</span>
+            <span class="stat-number" id="books-read">0</span>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-label">To be read</span>
+            <span class="stat-number" id="books-unread">0</span>
+        </div>
+    </section>
+
+    <section class="library-section">
+        <div class="section-heading">
+            <div>
+                <h2>Your books</h2>
+                <p id="library-description">Your collection, all in one place.</p>
+            </div>
+        </div>
+
+        <div id="library" class="book-grid"></div>
+
+        <div id="empty-state" class="empty-state" hidden>
+            <div class="empty-icon">📚</div>
+            <h3>Your library is waiting</h3>
+            <p>Add your first book and start building your collection.</p>
+            <button type="button" id="empty-add-btn" class="secondary-btn">
+                Add your first book
+            </button>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <p>Made for readers, one page at a time.</p>
+</footer>
+
+<dialog id="book-dialog" class="book-dialog">
+    <div class="dialog-header">
+        <div>
+            <p class="eyebrow">YOUR COLLECTION</p>
+            <h2>Add a new book</h2>
+            <p class="dialog-description">Tell us a little about what you're reading.</p>
+        </div>
+
+        <button
+            type="button"
+            id="close-dialog-btn"
+            class="close-btn"
+            aria-label="Close dialog"
+        >&times;</button>
+    </div>
+
+    <form id="book-form">
+        <div class="form-group">
+            <label for="title">Book title</label>
+            <input
+                type="text"
+                id="title"
+                name="title"
+                placeholder="e.g. Atomic Habits"
+                maxlength="150"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="author">Author</label>
+            <input
+                type="text"
+                id="author"
+                name="author"
+                placeholder="e.g. James Clear"
+                maxlength="100"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="pages">Number of pages</label>
+            <input
+                type="number"
+                id="pages"
+                name="pages"
+                placeholder="e.g. 320"
+                min="1"
+                step="1"
+                required
+            >
+        </div>
+
+        <label class="checkbox-label" for="read">
+            <input type="checkbox" id="read" name="read">
+            <span>I've already read this book</span>
+        </label>
+
+        <div class="form-actions">
+            <button type="button" id="cancel-btn" class="secondary-btn">
+                Cancel
+            </button>
+            <button type="submit" class="primary-btn">
+                Add to library
+            </button>
+        </div>
+    </form>
+</dialog>
+```
+
+</body>
+</html>
